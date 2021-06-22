@@ -7,7 +7,7 @@ class TeamPlayer(db.Model):
     id_user           = db.Column(db.ForeignKey('users.id'), primary_key=True)
     date              = db.Column(db.DateTime)
     team              = db.relationship('Team', foreign_keys=id_team)
-    player            = db.relationship('Player', foreign_keys=id_user)
+    player            = db.relationship('User', foreign_keys=id_user)
     activate          = db.Column(db.Boolean, default=True)
 
     def __init__(self, id_team, id_user, date, activate):
